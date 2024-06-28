@@ -7,9 +7,24 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - $HOME/.Xauthority:/home/node/.Xauthority
+      - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket
+    privileged: true # avoids dbus errors in logs
     ports:
       - "8080:8080"
+    devices:
+      - /dev/vchiq
+    environment:
+      DISPLAY: unix:0.0
+    network_mode: host
+    shm_size: "128mb"
     restart: unless-stopped
+    command:
+      - npm
+      - run
+      - start
     command: ["npm", "run", "server"]
     env_file:
       - .env
