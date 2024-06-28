@@ -25,6 +25,5 @@ services:
       - npm
       - run
       - start
-    command: ["npm", "run", "server"]
     env_file:
       - .env
