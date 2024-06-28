@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   magicmirror:
     container_name: magicmirror
@@ -12,8 +10,6 @@ services:
       - $HOME/.Xauthority:/home/node/.Xauthority
       - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket
     privileged: true # avoids dbus errors in logs
-    ports:
-      - "8080:8080"
     devices:
       - /dev/vchiq
     environment:
