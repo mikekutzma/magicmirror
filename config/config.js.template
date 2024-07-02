@@ -81,6 +81,16 @@ let config = {
                 roundTemp: true
 			}
 		},
+        {
+            module: 'MMM-iFrame',
+            position: 'lower_third',	// This can be any of the regions.
+            config: {
+                    url: ["http://homeassistant.local:8123/dashboard-magicmirror/0"],
+                    width: "1280", // width of iframe
+                    height: "720", // height of iframe
+                    frameWidth: "1200" // width of embedded iframe, height is beeing calculated by aspect ratio of iframe
+            }
+        },
 		{
             module: 'MMM-nyc-transit',
             position: 'top_right',
@@ -102,22 +112,38 @@ let config = {
               updateInterval: 60000
             }
 		},
-		{
-			module: "newsfeed",
-			position: "bottom_bar",
-			config: {
-				feeds: [
-					{
-						title: "New York Times",
-						url: "https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml"
-					}
-				],
-				showSourceTitle: true,
-				showPublishDate: true,
-				broadcastNewsFeeds: true,
-				broadcastNewsUpdates: true
-			}
-		},
+        {
+          module: 'MMM-pages',
+          config: {
+            rotationTime: 0,
+              modules: [
+                [
+                  "MMM-iFrame"
+                ],
+                [
+                  // 'MMM-network-signal',
+                  // 'MMM-Tools',
+                  // 'MMM-ServerStatus'
+                ]
+              ],
+              fixed: [
+                  "clock",
+                  'updatenotification',
+                  'weather',
+                  "calendar",
+                  'MMM-page-indicator',
+                //'MMM-Remote-Control'
+              ]
+          }
+        },
+        {
+          module: 'MMM-page-indicator',
+          position: 'bottom_bar',
+          config: {
+            pages: 2,
+            activeBright: true
+          }
+        }
 	]
 };
 

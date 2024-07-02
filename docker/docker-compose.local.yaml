@@ -1,0 +1,17 @@
+services:
+  magicmirror:
+    container_name: magicmirror
+    image: ghcr.io/mikekutzma/magicmirror:latest
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
+    command:
+      - npm
+      - run
+      - server
+    env_file:
+      - .env
+

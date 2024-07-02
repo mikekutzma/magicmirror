@@ -1,0 +1,5 @@
+https://github.com/mikekutzma/MMM-nyc-transit.git
+https://github.com/edward-shen/MMM-pages.git
+https://github.com/edward-shen/MMM-page-indicator.git
+https://github.com/alberttwong/MMM-iFrame.git
+
