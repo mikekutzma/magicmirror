@@ -85,7 +85,7 @@ let config = {
             module: 'MMM-iFrame',
             position: 'lower_third',	// This can be any of the regions.
             config: {
-                    url: ["http://homeassistant.local:8123/dashboard-magicmirror/0"],
+                    url: ["http://homeassistant.local:8123/dashboard-magicmirror/0?kiosk"],
                     width: "1280", // width of iframe
                     height: "720", // height of iframe
                     frameWidth: "1200" // width of embedded iframe, height is beeing calculated by aspect ratio of iframe
