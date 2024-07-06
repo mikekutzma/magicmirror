@@ -86,6 +86,7 @@ let config = {
             position: 'middle_center',	// This can be any of the regions.
             config: {
                     url: ["${HOME_ASSISTANT_URL}"],
+                    updateInterval: 1000 * 60 * 60,
                     width: "1280", // width of iframe
                     height: "720", // height of iframe
                     frameWidth: "1280" // width of embedded iframe, height is beeing calculated by aspect ratio of iframe
