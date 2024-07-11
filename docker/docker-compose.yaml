@@ -9,6 +9,8 @@ services:
       - /tmp/.X11-unix:/tmp/.X11-unix
       - $HOME/.Xauthority:/home/node/.Xauthority
       - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket
+      - ../config:/opt/magic_mirror/config
+      - electron:/home/node/.config/Electron
     privileged: true # avoids dbus errors in logs
     devices:
       - /dev/vchiq
@@ -23,3 +25,6 @@ services:
       - start
     env_file:
       - .env
+
+volumes:
+  electron:
