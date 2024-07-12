@@ -132,6 +132,7 @@ let config = {
                   'updatenotification',
                   'weather',
                   "calendar",
+                  "MMM-nyc-transit",
                   'MMM-page-indicator',
                 //'MMM-Remote-Control'
               ]
